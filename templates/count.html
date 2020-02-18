@@ -1,0 +1,25 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container bg-light">
+		<h1>You have entered {{ count }} words.</h1>
+
+		<a href="{% url 'home' %}"></a>
+		<button type="button" class="btn btn-light"><a href="{% url 'home' %}">
+		Enter Again ?</a></button>
+
+		<h1>Full text:</h1>
+		{{ fulltext }}
+
+		<h1> Word Count: </h1>
+
+		{% for word, total in sortedwords %}
+			{{ word }} - {{ total }}
+			<br/>
+		
+		{% endfor %}
+	</div>
+{% endblock %}
